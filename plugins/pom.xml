@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>taskz</groupId>
+        <artifactId>all</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>plugins</artifactId>
+    <packaging>pom</packaging>
+    <name>plugins</name>
+    <description></description>
+
+	<modules>
+		<module>car</module>
+		<module>house</module>
+		<module>person</module>
+		<module>passport</module>
+		<module>kid</module>
+		<module>school</module>
+	</modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>taskz</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+    </dependencies>
+</project>
