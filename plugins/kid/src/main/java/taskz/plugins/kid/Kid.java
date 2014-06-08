@@ -4,6 +4,7 @@ import taskz.TaskzEvent;
 import taskz.TaskzObject;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.EventObject;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Kid extends TaskzObject {
     }
 
     @Override
-    public Stream<? extends TaskzEvent> getEvents() {
+    public Stream<? extends TaskzEvent> getEvents(LocalDateTime from, LocalDateTime to) {
         List<TaskzEvent> list = new ArrayList<>();
         return list.stream();
     }

@@ -3,6 +3,7 @@ package taskz.plugins.person;
 import taskz.TaskzEvent;
 import taskz.TaskzObject;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -16,7 +17,7 @@ public class Person extends TaskzObject {
     }
 
     @Override
-    public Stream<? extends TaskzEvent> getEvents() {
+    public Stream<? extends TaskzEvent> getEvents(LocalDateTime from, LocalDateTime to) {
         List<TaskzEvent> list = new ArrayList<>();
         return list.stream();
     }

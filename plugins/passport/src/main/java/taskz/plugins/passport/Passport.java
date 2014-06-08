@@ -19,7 +19,7 @@ public class Passport extends TaskzObject {
     }
 
     @Override
-    public Stream<? extends TaskzEvent> getEvents() {
+    public Stream<? extends TaskzEvent> getEvents(LocalDateTime from, LocalDateTime to) {
         List<TaskzEvent> list = new ArrayList<>();
         list.add(new RenewalEvent(this, LocalDateTime.now()));
         return list.stream();

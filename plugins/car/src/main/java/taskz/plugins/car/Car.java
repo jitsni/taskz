@@ -27,7 +27,7 @@ public class Car extends TaskzObject {
     }
 
     @Override
-    public Stream<? extends TaskzEvent> getEvents() {
+    public Stream<? extends TaskzEvent> getEvents(LocalDateTime from, LocalDateTime to) {
         List<TaskzEvent> list = new ArrayList<>();
         list.add(new OilChangeEvent(this, oilChange));     // add multiple of them 3 mths apart
         list.add(new InsuranceRenwalEvent(this, LocalDateTime.now()));

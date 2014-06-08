@@ -13,7 +13,9 @@ import java.util.stream.Stream;
  * @author Jitendra Kotamraju
  */
 public class CoreTest extends TestCase {
-    public void testTasks() {
+    Engine engine;
+
+    protected void setUp() throws Exception {
         LocalDateTime hoilChange = LocalDateTime.of(2013, 10, 4, 0, 0);
         Car honda = new Car(2000, "Honda", "Accord", hoilChange);
 
@@ -25,11 +27,35 @@ public class CoreTest extends TestCase {
         LocalDateTime movieNight = LocalDateTime.of(2013, 10, 4, 20, 0);
         School school = new School("Millikin", harvestFestival,
                 walkathon, movieNight);
-
-        Engine engine = new Engine(honda, camry, school);
-        Stream<? extends EventObject> events = engine.getEvents();
-        events.sorted().forEach(p -> {
-            System.out.println(p);
-        });
+        engine = new Engine(honda, camry, school);
     }
+
+    public void testTasks() {
+        Stream<? extends EventObject> events = engine.getEvents();
+        events.sorted().forEach(System.out::println);
+    }
+
+    public void testTodayTasks() {
+        Stream<? extends EventObject> events = engine.getTodayEvents();
+        events.sorted().forEach(System.out::println);
+    }
+
+    public void testWeekTasks() {
+        Stream<? extends EventObject> events = engine.getWeekEvents();
+        events.sorted().forEach(System.out::println);
+    }
+
+    public void testMonthTasks() {
+        Stream<? extends EventObject> events = engine.getMonthEvents();
+        events.sorted().forEach(System.out::println);
+    }
+
+    public void testYearTasks() {
+        Stream<? extends EventObject> events = engine.getYearEvents();
+        events.sorted().forEach(System.out::println);
+    }
+
+    protected void tearDown() throws Exception {
+    }
+
 }

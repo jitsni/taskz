@@ -29,7 +29,7 @@ public class School extends TaskzObject {
     }
 
     @Override
-    public Stream<? extends TaskzEvent> getEvents() {
+    public Stream<? extends TaskzEvent> getEvents(LocalDateTime from, LocalDateTime to) {
         List<TaskzEvent> list = new ArrayList<>();
         list.add(new HarvestFestivalEvent(this, harvestFestival));
         list.add(new MovieNightEvent(this, movieNight));
